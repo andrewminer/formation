@@ -51,7 +51,9 @@ LinkedListNode* LinkedList_prepend(LinkedListNode *head, int value) {
 
 // Add a value to the end of the linked list
 LinkedListNode* LinkedList_append(LinkedListNode *head, int value) {
-  if (head == NULL) return NULL;
+  if (head == NULL) {
+    return LinkedList_new(value);
+  }
 
   LinkedListNode *current = head;
   while (current->next != NULL) {
